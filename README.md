@@ -36,6 +36,12 @@ Barangay clean-up organizers can add a clean-up schedule containing the activity
 4. Successfully added schedules appear on the dashboard.
 5. Schedules remain saved after refreshing the browser using localStorage.
 
+### FR-02: Search Clean-Up Schedules
+
+1. Users can search schedules by activity name or location.
+2. The displayed schedules update as the user types, without changing saved data.
+3. Clearing the search restores the full schedule list.
+
 ## 6. Objectives
 
 - Organize barangay clean-up activities.
@@ -51,6 +57,7 @@ Barangay clean-up organizers can add a clean-up schedule containing the activity
 - Deleting schedules.
 - Displaying schedule statistics and counts.
 - Navigation between application sections.
+- Searching schedules by activity name or location.
 - Saving schedule data using browser localStorage.
 
 ## 8. Technologies Used

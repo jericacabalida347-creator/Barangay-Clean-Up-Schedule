@@ -424,6 +424,37 @@ nav {
     font-weight: bold;
 }
 
+.search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 420px;
+    margin-bottom: 20px;
+}
+
+.search-group label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #443750;
+}
+
+.search-group input {
+    width: 100%;
+    border: 1px solid #e1d9e9;
+    border-radius: 9px;
+    padding: 12px;
+    background: #fdfcff;
+    font-size: 13px;
+    color: #2d2435;
+    outline: none;
+    transition: 0.2s;
+}
+
+.search-group input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 3px #a855f71c;
+}
+
 /* =========================
    UPCOMING CARDS
 ========================= */
