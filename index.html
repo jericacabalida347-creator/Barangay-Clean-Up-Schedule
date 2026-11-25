@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Clean-Up Schedule</title>
+
+    <!-- LOGO / FAVICON -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <!-- LOGO AND BRAND -->
+        <div class="brand">
+            <img src="logo.png" alt="CleanBarangay Logo" class="brand-logo">
+
+            <div class="brand-text">
+                <h2>CleanBarangay</h2>
+                <span>Community Clean-Up</span>
+            </div>
+        </div>
+
+        <p class="menu-label">MENU</p>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#upcoming" class="nav-link">
+                <span>◷</span> Upcoming Activities
+            </a>
+
+            <a href="#manage" class="nav-link">
+                <span>＋</span> Manage Activities
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-note">
+                <span class="note-icon">♻</span>
+                <h3>Keep it clean!</h3>
+                <p>Small actions create a big difference in our community.</p>
+            </div>
+
+            <p class="sidebar-footer">Barangay Community Project</p>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="dashboard">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <div>
+                <p class="welcome-text">COMMUNITY MANAGEMENT</p>
+                <h2>Clean-Up Dashboard</h2>
+            </div>
+
+            <div class="profile">
+                <div class="profile-icon">B</div>
+                <div>
+                    <strong>Barangay</strong>
+                    <small>Clean-Up Organizer</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-tag">♻ COMMUNITY INITIATIVE</span>
+
+                <h1>A cleaner place,<br>
+                    a better <span>future.</span>
+                </h1>
+
+                <p>
+                    Organize clean-up activities and bring your community
+                    together for a cleaner, healthier environment.
+                </p>
+
+                <a href="#manage" class="hero-btn">＋ Add Activity</a>
+            </div>
+
+            <div class="hero-decoration">✦</div>
+            <div class="hero-circle"></div>
+        </section>
+
+        <!-- STAT CARDS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Total Activities</span>
+                    <div class="stat-icon purple">▦</div>
+                </div>
+                <h2 id="totalActivities">0</h2>
+                <p>All scheduled activities</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Upcoming Activities</span>
+                    <div class="stat-icon pink">◷</div>
+                </div>
+                <h2 id="upcomingActivities">0</h2>
+                <p>Activities from today onward</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Past Activities</span>
+                    <div class="stat-icon dark">✓</div>
+                </div>
+                <h2 id="pastActivities">0</h2>
+                <p>Previous scheduled activities</p>
+            </div>
+
+        </section>
+
+        <!-- UPCOMING ACTIVITIES -->
+        <section class="section-card" id="upcoming">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">YOUR COMMUNITY</p>
+                    <h2>Upcoming Clean-Ups</h2>
+                </div>
+
+                <a href="#manage" class="view-link">Manage activities →</a>
+            </div>
+
+            <div id="upcomingList" class="upcoming-grid"></div>
+
+        </section>
+
+        <!-- MANAGE ACTIVITIES -->
+        <section class="section-card" id="manage">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">ACTIVITY ORGANIZER</p>
+                    <h2 id="formTitle">Add Clean-Up Activity</h2>
+                </div>
+            </div>
+
+            <form id="activityForm">
+
+                <input type="hidden" id="editId">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="activityName">Activity Name</label>
+                        <input type="text" id="activityName"
+                            placeholder="e.g. Community Clean-Up Drive" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location"
+                            placeholder="e.g. Barangay Hall" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="description">Description</label>
+                        <textarea id="description"
+                            placeholder="Write details about the clean-up activity..."
+                            required></textarea>
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="primary-btn" id="submitBtn">
+                        ＋ Add Activity
+                    </button>
+
+                    <button type="button" class="secondary-btn"
+                        id="cancelBtn" hidden>
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- ALL ACTIVITIES -->
+        <section class="section-card">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">ACTIVITY RECORDS</p>
+                    <h2>All Activities</h2>
+                </div>
+
+                <span class="total-badge" id="activityCount">0 activities</span>
+            </div>
+
+            <div id="activitiesList" class="activities-list"></div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <p>© Barangay Clean-Up Schedule · Together for a cleaner community 💜</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
