@@ -7,6 +7,7 @@ let activities = JSON.parse(localStorage.getItem("cleanUpActivities")) || [];
 const activityForm = document.getElementById("activityForm");
 const activitiesList = document.getElementById("activitiesList");
 const upcomingList = document.getElementById("upcomingList");
+const activitySearch = document.getElementById("activitySearch");
 
 /* =========================
    SAVE DATA
@@ -175,16 +176,28 @@ function displayUpcoming() {
 function displayActivities() {
     activitiesList.innerHTML = "";
 
-    const sortedActivities = [...activities].sort(function(a, b) {
-        return (a.date + a.time).localeCompare(b.date + b.time);
-    });
+    const searchTerm = activitySearch.value.trim().toLowerCase();
+    const sortedActivities = [...activities]
+        .filter(function(activity) {
+            return activity.name.toLowerCase().includes(searchTerm) ||
+                activity.location.toLowerCase().includes(searchTerm);
+        })
+        .sort(function(a, b) {
+            return (a.date + a.time).localeCompare(b.date + b.time);
+        });
 
     if (sortedActivities.length === 0) {
-        activitiesList.innerHTML = `
-            <p class="empty-message">
-                No activities added yet. Create your first clean-up schedule!
-            </p>
-        `;
+        activitiesList.innerHTML = activities.length === 0
+            ? `
+                <p class="empty-message">
+                    No activities added yet. Create your first clean-up schedule!
+                </p>
+            `
+            : `
+                <p class="empty-message">
+                    No activities match your search.
+                </p>
+            `;
         updateCounters();
         displayUpcoming();
         return;
@@ -219,6 +232,8 @@ function displayActivities() {
     updateCounters();
     displayUpcoming();
 }
+
+activitySearch.addEventListener("input", displayActivities);
 
 /* =========================
    ADD OR UPDATE ACTIVITY
