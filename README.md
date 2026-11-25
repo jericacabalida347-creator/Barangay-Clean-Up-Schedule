@@ -24,11 +24,19 @@ A web page where organizers can add and manage clean-up schedules and residents 
 
 ## 4. Functional Requirement (FR-01)
 
-**FR-01: Manage Clean-Up Schedules**
+### FR-01: Manage Clean-Up Schedules
 
-Barangay clean-up organizers can add a clean-up schedule containing the activity name, date, time, location, and description.
+Barangay clean-up organizers can add a clean-up schedule containing the following information:
+
+- Activity name
+- Date
+- Time
+- Location
+- Description
 
 ## 5. Acceptance Criteria
+
+The FR-01 feature is considered successful when:
 
 1. The user can add a clean-up schedule by entering the activity name, date, time, location, and description.
 2. The system rejects submissions with required fields left blank.
@@ -36,20 +44,28 @@ Barangay clean-up organizers can add a clean-up schedule containing the activity
 4. Successfully added schedules appear on the dashboard.
 5. Schedules remain saved after refreshing the browser using localStorage.
 
+## 6. Functional Requirement (FR-02)
+
 ### FR-02: Search Clean-Up Schedules
 
-1. Users can search schedules by activity name or location.
-2. The displayed schedules update as the user types, without changing saved data.
-3. Clearing the search restores the full schedule list.
+Users can search for clean-up schedules using the activity name or location.
 
-## 6. Objectives
+Acceptance criteria:
+
+1. Users can search schedules by activity name or location.
+2. The displayed schedules update as the user types.
+3. Searching does not modify or delete saved schedule data.
+4. Clearing the search field restores the full schedule list.
+
+## 7. Objectives
 
 - Organize barangay clean-up activities.
 - Make scheduled cleaning activities easier to view and manage.
 - Encourage community involvement in maintaining a clean environment.
 - Provide a simple and user-friendly interface.
+- Help residents find relevant clean-up schedules quickly.
 
-## 7. Features
+## 8. Features
 
 - Dashboard for viewing clean-up schedules.
 - Adding new clean-up activities.
@@ -60,36 +76,40 @@ Barangay clean-up organizers can add a clean-up schedule containing the activity
 - Searching schedules by activity name or location.
 - Saving schedule data using browser localStorage.
 
-## 8. Technologies Used
+## 9. Technologies Used
 
-- HTML5 – webpage structure
-- CSS3 – design and layout
-- JavaScript – app functionality
-- localStorage – browser-based data storage
-- Git – version control
-- GitHub – source code hosting
-- GitHub Pages – website deployment
+| Technology | Purpose |
+|---|---|
+| HTML5 | Webpage structure |
+| CSS3 | Design and layout |
+| JavaScript | Application functionality |
+| localStorage | Browser-based data storage |
+| Git | Version control |
+| GitHub | Source code hosting |
+| GitHub Pages | Website deployment |
 
-## 9. How to Run
+## 10. How to Run
 
 1. Clone or download this repository.
 2. Open the project folder.
 3. Open `index.html` using a web browser.
 4. Use the dashboard to manage clean-up schedules.
 
-## 10. Live Website
+## 11. Live Website
 
-https://jericacabalida347-creator.github.io/Barangay-Clean-Up-Schedule/
+[Barangay Clean-Up Schedule – Live Website](https://jericacabalida347-creator.github.io/Barangay-Clean-Up-Schedule/)
 
-## 11. GitHub Repository
+## 12. GitHub Repository
 
-https://github.com/jericacabalida347-creator/Barangay-Clean-Up-Schedule
+[Barangay Clean-Up Schedule – GitHub Repository](https://github.com/jericacabalida347-creator/Barangay-Clean-Up-Schedule)
 
-## 12. Testing
+## 13. Testing
 
 Functional testing was performed on the application.
 
-Tested functions include:
+### FR-01: Manage Clean-Up Schedules
+
+The following functions were tested:
 
 - Adding a clean-up schedule
 - Displaying schedules
@@ -98,12 +118,27 @@ Tested functions include:
 - Dashboard statistics
 - Navigation and buttons
 
-The reported test results were all passed.
+### FR-02: Search Clean-Up Schedules
 
-## 13. Privacy and Test Data
+The following search scenarios were tested:
+
+- Searching by activity name
+- Searching by location
+- Searching using partial words
+- Checking search results when no match is found
+- Clearing the search field to restore all schedules
+- Searching for newly added schedules
+
+The developer reported that all listed tests passed.
+
+## 14. Privacy and Test Data
 
 This project uses made-up sample data for testing. No real personal information is needed. Schedule data is stored locally in the browser using localStorage.
 
-## 14. Developer
+## 15. Developer
 
-Jerica Cabalida
+**Developer:** Jerica Cabalida
+
+**Project:** Barangay Clean-Up Schedule
+
+**Version:** v0.1.0
